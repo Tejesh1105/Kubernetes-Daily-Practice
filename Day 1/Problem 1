@@ -1,0 +1,17 @@
+Problem 1
+
+Explain in your own words:
+
+Why are containers better than VMs for microservices?
+
+Containers are better for microservices because:
+
+• Microservices require fast startup & scaling → containers start in milliseconds
+• They allow independent deployment of each service
+• They ensure environment consistency across dev, staging, prod
+• They are lightweight, so you can run many services on the same node
+• They integrate easily with orchestration tools like Kubernetes
+
+Key Insight:
+
+Microservices = many small services → containers fit perfectly.
