@@ -1,0 +1,14 @@
+1️⃣ What is the brain of Kubernetes? 
+Solution :- Control plane is called the brain of Kubernetes, it has components such as API server, Scheduler, controller manager and etcd. 
+
+2️⃣ Where are containers actually running? 
+Solution:- Containers are actually running in a container runtime environment such as docker which is running like a process on a host's kernel.
+
+ 3️⃣ What component decides which node runs a pod?
+ Solution:- Scheduler decides which node runs a pod, and we also tell the node to run a pod. 
+
+4️⃣ What database stores Kubernetes cluster state? 
+Solution:- Etcd database stores kubernetes cluster state. 
+
+5️⃣ Which tool do engineers use to talk to Kubernetes? 
+Solution:- Engineers use tools such as kubectl which talks to API server of kubernetes.
