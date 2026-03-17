@@ -1,0 +1,61 @@
+🎯 Architecture Design
+
+We have:
+
+Frontend → Backend → Database
+🧱 Kubernetes Design
+1️⃣ Frontend
+
+• Pod / Deployment
+• Service (NodePort / LoadBalancer)
+
+2️⃣ Backend API
+
+• Pod / Deployment
+• Service (ClusterIP)
+
+3️⃣ Database
+
+• StatefulSet (important)
+• Persistent Volume
+• Service (ClusterIP)
+
+📦 Diagram
+[ User ]
+   ↓
+[ Frontend Service ]  (LoadBalancer)
+   ↓
+[ Frontend Pods ]
+   ↓
+[ Backend Service ]  (ClusterIP)
+   ↓
+[ Backend Pods ]
+   ↓
+[ Database Service ]
+   ↓
+[ Database Pod (StatefulSet + Storage) ]
+⚙️ Node Distribution
+
+Example:
+
+Node	Workload
+Node 1	Frontend Pods
+Node 2	Backend Pods
+Node 3	Database
+🔥 Production Notes
+
+• DB NEVER in normal pod → use StatefulSet
+• Use Secrets for DB password
+• Use Ingress instead of NodePort (later topic)
+
+🧠 Interview-Level Insight
+
+If interviewer asks:
+
+👉 “Why not run DB in Deployment?”
+
+Answer:
+
+• No stable identity
+• No persistent storage guarantee
+• Data loss risk
