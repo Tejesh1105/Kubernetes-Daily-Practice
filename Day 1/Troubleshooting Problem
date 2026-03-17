@@ -1,0 +1,40 @@
+🧯 Troubleshooting Case (Real Production Scenario)
+
+An engineer runs:
+
+kubectl get pods
+
+Output:
+
+Error from server (Connection refused)
+
+What could be wrong?
+
+What would you check first?
+
+Solution:- 
+This error means:
+
+👉 kubectl cannot reach API Server
+
+🔧 What You Should Check FIRST:
+1️⃣ Is cluster accessible?
+kubectl cluster-info
+2️⃣ Check kubeconfig
+cat ~/.kube/config
+3️⃣ API Server running?
+
+If local cluster:
+
+minikube status
+4️⃣ Network issue?
+
+• VPN?
+• Firewall blocking?
+
+5️⃣ Credentials expired? (EKS/GKE)
+
+💡 Golden Rule:
+
+❌ Don’t jump to pods
+✅ First check control plane connectivity
