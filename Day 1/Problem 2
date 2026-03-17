@@ -1,0 +1,46 @@
+Problem 2 
+Question:
+
+When you run:
+
+kubectl apply -f pod.yaml
+
+Explain the full flow inside Kubernetes.
+
+Which components are involved?
+
+Solution:-
+When you run:
+
+kubectl apply -f pod.yaml
+Step-by-step flow:
+
+1️⃣ kubectl
+→ Sends request to API Server
+
+2️⃣ API Server
+→ Validates YAML
+→ Stores desired state in etcd
+
+3️⃣ Controller Manager
+→ Notices new Pod is needed
+→ Ensures desired state is met
+
+4️⃣ Scheduler
+→ Chooses best node for the Pod
+
+5️⃣ kubelet (on selected node)
+→ Receives instruction
+→ Talks to container runtime
+
+6️⃣ Container Runtime (Docker/containerd)
+→ Pulls image
+→ Starts container
+
+7️⃣ kube-proxy
+→ Handles networking
+
+💡 Golden Rule:
+👉 Kubernetes is declarative
+You say: “I want a pod”
+Kubernetes figures out: “HOW to make it happen”
