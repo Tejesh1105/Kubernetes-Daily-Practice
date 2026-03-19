@@ -9,7 +9,7 @@ Traffic suddenly increases 10x.
 Why is Kubernetes better than Docker alone?
 
 Solution :- 
-Docker was created to solve two major problems i.e Environmental inconsitency and dependency problems in software delivery. However docker by default does not have scaling by default we need a conatiner orchestration tool like docker swarm or Kubernetes for that. So if traffic increases by 10x Kubernetes has features like load balancing and scaling to take care of it. And Even if one pod have some issues kubernetes also has self-healing and will create a replacing pod.
+Docker was created to solve two major problems i.e Environmental inconsitency and dependency problems in software delivery. However docker by default does not have scaling by default we need a container orchestration tool like docker swarm or Kubernetes for that. So if traffic increases by 10x Kubernetes has features like load balancing and scaling to take care of it. And Even if one pod have some issues kubernetes also has self-healing and will create a replacing pod.
 Kubernetes also have :-
 • Auto-scaling (HPA)
 • Rolling updates without downtime
