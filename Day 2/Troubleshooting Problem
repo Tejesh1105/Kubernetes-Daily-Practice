@@ -1,0 +1,32 @@
+Deployment exists, but:
+
+kubectl get pods
+No resources found
+
+👉 What could be wrong?
+👉 What to check first?
+
+Solution:-
+Possible Causes:
+
+• Replica count = 0
+• Wrong namespace
+• Selector mismatch
+• Image issues
+• Controller not working
+
+Correct Debug Flow
+1️⃣ Check Deployment
+kubectl describe deployment <name>
+2️⃣ Check ReplicaSet
+kubectl get rs
+3️⃣ Check Events
+kubectl get events
+4️⃣ Check Namespace
+kubectl get pods -n <namespace>
+5️⃣ THEN check Controller Manager
+
+# Most Common Real Issue
+
+ Namespace mismatch
+Wrong labels/selectors
