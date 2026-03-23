@@ -1,0 +1,12 @@
+1️⃣ Which component talks to etcd?
+2️⃣ What algorithm does etcd use?
+3️⃣ Who ensures desired state?
+4️⃣ Who assigns nodes?
+5️⃣ What happens if API Server is down?
+
+Solution:-
+1️⃣ API Server
+2️⃣ RAFT
+3️⃣ Controller Manager
+4️⃣ Scheduler
+5️⃣ Cluster keeps running, but no new operations possible
