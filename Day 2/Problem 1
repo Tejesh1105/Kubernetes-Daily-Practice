@@ -1,0 +1,26 @@
+Explain:
+ Why does Kubernetes use etcd instead of a normal database?
+Solution :-
+Kubernetes uses etcd because it is designed for distributed systems with strong consistency, which is critical for maintaining cluster state.
+
+# Key Reasons:
+
+• Single Source of Truth
+All cluster state (pods, nodes, configs) is stored in etcd. Every component relies on it.
+
+• Strong Consistency (RAFT Algorithm)
+Every write is agreed upon by a majority of nodes → no conflicting states.
+
+• Distributed & Fault-Tolerant
+Runs across multiple nodes and survives failures.
+
+• Simple Key-Value Store
+Kubernetes does not need complex queries (joins, transactions). It only needs fast reads/writes.
+
+• Watch Mechanism (VERY IMPORTANT)
+Components “watch” for changes and react instantly (event-driven architecture).
+
+# Key Insight
+
+Kubernetes is a state reconciliation system, not a database-heavy system.
+So etcd fits perfectly.
