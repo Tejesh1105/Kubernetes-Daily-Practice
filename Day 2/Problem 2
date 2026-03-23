@@ -1,0 +1,44 @@
+A Pod is stuck in:
+Pending
+
+👉 Which component is MOST likely responsible?
+👉 What would you check?
+
+Solution:- 
+Responsible Component:
+
+# kube-scheduler
+
+Because:
+A Pod in Pending means → not assigned to any node yet
+
+Debugging Steps (Production Order)
+1️⃣ Check Events (MOST IMPORTANT)
+kubectl describe pod <pod-name>
+
+Look for:
+
+• Insufficient CPU/memory
+• 0/3 nodes available
+• taints not tolerated
+
+2️⃣ Check Nodes
+kubectl get nodes
+kubectl describe node <node-name>
+
+ Look for:
+
+• Resource pressure
+• Node readiness
+
+3️⃣ Check Scheduling Constraints
+
+• NodeSelector
+• Node Affinity
+• Taints & Tolerations
+
+4️⃣ Check Scheduler Health
+kubectl get pods -n kube-system
+
+# Golden Rule
+Events tell you the truth faster than anything else
