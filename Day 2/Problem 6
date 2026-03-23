@@ -1,0 +1,35 @@
+Why is Kubernetes called a declarative system?
+Solution:-
+Kubernetes is called a declarative system because the user defines the desired state of the system (e.g., number of replicas, container image), and Kubernetes automatically ensures that the actual state matches the desired state using continuous reconciliation.
+
+Kubernetes does this using a reconciliation loop (Controller Manager)
+
+It constantly compares:
+
+Desired State  vs  Actual State
+
+And fixes differences automatically.
+
+# Example (Production Thinking)
+
+You define:
+
+replicas: 3
+
+If 1 pod crashes:
+
+Kubernetes automatically creates a new one
+No manual action required
+
+⚔️ Declarative vs Imperative (VERY IMPORTANT)
+Type	         Example	         Behavior
+Declarative	kubectl apply -f	 Define desired state
+Imperative	kubectl run nginx	 Direct command execution
+
+# Senior Insight
+
+Declarative systems are:
+
+• Self-healing
+• Idempotent (same result no matter how many times you apply)
+• Easier to automate (CI/CD, GitOps)
