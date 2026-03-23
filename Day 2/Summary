@@ -1,0 +1,10 @@
+FINAL DAY 2 TAKEAWAY
+
+Kubernetes is not magic.
+
+It is:
+
+• API Server → Entry
+• etcd → Storage
+• Scheduler → Decision
+• Controller → Correction
