@@ -1,0 +1,21 @@
+Scheduler is DOWN. What happens?
+
+A. Existing pods crash
+B. New pods won’t be scheduled
+C. Cluster stops working
+D. etcd loses data
+
+Solution:-
+B. New pods won’t be scheduled.
+
+Explanation:
+
+• Existing pods → keep running
+• New pods → stuck in Pending
+• etcd → unaffected
+• Cluster → partially functional
+
+# Production Insight
+
+ Deployments will appear “stuck”
+ Autoscaling will fail
