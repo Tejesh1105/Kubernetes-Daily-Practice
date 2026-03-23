@@ -1,0 +1,30 @@
+Write a Pod YAML:
+
+• Name: nginx-pod
+• Image: nginx
+• Port: 80
+
+Solution:-
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+
+#Production Improvement
+
+# Always add:
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "200m"
+    memory: "256Mi"
