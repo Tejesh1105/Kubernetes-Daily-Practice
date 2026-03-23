@@ -1,0 +1,36 @@
+Design High Availability for:
+
+• API Server
+• etcd
+• Scheduler
+
+Solution:-
+
+1️⃣ API Server
+
+• Multiple replicas
+• Behind Load Balancer
+• Stateless → easy scaling
+
+2️⃣ etcd
+
+• Odd number cluster (3, 5, 7)
+• Uses quorum (majority voting)
+• Spread across AZs
+• Regular backups
+
+3️⃣ Scheduler
+
+• Multiple instances
+• Leader election
+• One active, others standby
+
+4️⃣ Controller Manager (Important Add)
+
+• Also uses leader election
+
+# Rule of Thumb
+Type	Strategy
+Stateless	Replicate
+Stateful (etcd)	Quorum
+Leader-based	Leader Election
